@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Note from Elena — Christmas in Europe with Viking</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ivory: #F7F1E8;
+    --navy: #1F2D3D;
+    --viking-blue: #2F5D7C;
+    --gold: #C9A44C;
+    --sage: #9BAE9A;
+    --sage-bg: #EFF3EE;
+    --cranberry: #8A2F2F;
+    --body-font: 'Cormorant Garamond', Georgia, serif;
+    --ui-font: 'Jost', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--ivory);
+    color: var(--navy);
+    font-family: var(--body-font);
+    font-size: 19px;
+    line-height: 1.75;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── STATIONERY HEADER ── */
+  .letterhead {
+    text-align: center;
+    padding: 52px 24px 24px;
+    position: relative;
+  }
+
+  .letterhead-rule {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+
+  .letterhead-rule span.line {
+    flex: 1;
+    max-width: 120px;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.6;
+  }
+
+  .letterhead-rule span.diamond {
+    width: 7px;
+    height: 7px;
+    background: var(--gold);
+    transform: rotate(45deg);
+    opacity: 0.8;
+  }
+
+  .from-line {
+    font-family: var(--ui-font);
+    font-weight: 300;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--viking-blue);
+    opacity: 0.75;
+    margin-bottom: 6px;
+  }
+
+  .date-line {
+    font-family: var(--body-font);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--navy);
+    opacity: 0.5;
+  }
+
+  /* ── HERO / HEADLINE ── */
+  .hero {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 12px 32px 56px;
+    text-align: center;
+  }
+
+  .hero-eyebrow {
+    font-family: var(--ui-font);
+    font-size: 10.5px;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--cranberry);
+    margin-bottom: 22px;
+    opacity: 0.85;
+  }
+
+  h1 {
+    font-family: var(--body-font);
+    font-weight: 300;
+    font-size: clamp(2rem, 5vw, 3.1rem);
+    line-height: 1.25;
+    color: var(--navy);
+    margin-bottom: 30px;
+    letter-spacing: -0.01em;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--viking-blue);
+  }
+
+  .hero-rule {
+    width: 48px;
+    height: 1px;
+    background: var(--gold);
+    margin: 0 auto 30px;
+  }
+
+  .hero-opening {
+    font-size: 1.325rem;
+    font-style: italic;
+    color: var(--navy);
+    opacity: 0.8;
+    font-weight: 300;
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.8;
+  }
+
+  /* ── LETTER BODY ── */
+  .letter-body {
+    max-width: 660px;
+    margin: 0 auto;
+    padding: 0 32px 56px;
+  }
+
+  .letter-body p {
+    margin-bottom: 1.5em;
+    font-size: 1.145rem;
+    color: var(--navy);
+    opacity: 1;
+  }
+
+  .letter-body p:last-child { margin-bottom: 0; }
+
+  /* ── SAGE FEATURE BLOCK ── */
+  .sage-block {
+    background: var(--sage-bg);
+    border-left: 3px solid var(--sage);
+    padding: 44px 48px;
+    margin: 0 0 0 0;
+  }
+
+  .sage-block-inner {
+    max-width: 660px;
+    margin: 0 auto;
+  }
+
+  .sage-block h2 {
+    font-family: var(--body-font);
+    font-weight: 400;
+    font-size: 1.6rem;
+    color: var(--viking-blue);
+    margin-bottom: 18px;
+    letter-spacing: 0.01em;
+  }
+
+  .sage-block p {
+    font-size: 1.06rem;
+    color: var(--navy);
+    opacity: 0.85;
+    margin-bottom: 1.3em;
+  }
+
+  .sage-block p:last-child { margin-bottom: 0; }
+
+  .christmas-aside {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-top: 24px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(155, 174, 154, 0.4);
+  }
+
+  .christmas-dot {
+    width: 8px;
+    height: 8px;
+    min-width: 8px;
+    border-radius: 50%;
+    background: var(--cranberry);
+    margin-top: 8px;
+    opacity: 0.7;
+  }
+
+  .christmas-text {
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--navy);
+    opacity: 0.75;
+  }
+
+  /* ── ITINERARY CARD ── */
+  .itinerary-section {
+    max-width: 660px;
+    margin: 0 auto;
+    padding: 56px 32px;
+  }
+
+  .section-eyebrow {
+    font-family: var(--ui-font);
+    font-size: 10.5px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--viking-blue);
+    opacity: 0.65;
+    margin-bottom: 14px;
+  }
+
+  .itinerary-section h2 {
+    font-family: var(--body-font);
+    font-weight: 400;
+    font-size: 1.75rem;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+
+  .route-sub {
+    font-family: var(--body-font);
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--viking-blue);
+    margin-bottom: 32px;
+    opacity: 0.85;
+  }
+
+  .ports-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    margin-bottom: 36px;
+    padding: 0;
+    list-style: none;
+  }
+
+  .ports-list li {
+    font-family: var(--ui-font);
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    color: var(--viking-blue);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .ports-list li::before {
+    content: '';
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--gold);
+    opacity: 0.8;
+  }
+
+  .details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 36px;
+  }
+
+  @media (max-width: 520px) {
+    .details-grid { grid-template-columns: 1fr; }
+  }
+
+  .detail-card {
+    border: 1px solid rgba(201, 164, 76, 0.25);
+    padding: 20px 22px;
+    background: rgba(255,255,255,0.45);
+  }
+
+  .detail-label {
+    font-family: var(--ui-font);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--viking-blue);
+    opacity: 0.6;
+    margin-bottom: 6px;
+  }
+
+  .detail-value {
+    font-family: var(--body-font);
+    font-size: 1.1rem;
+    color: var(--navy);
+    line-height: 1.4;
+  }
+
+  .deadline-note {
+    background: rgba(138, 47, 47, 0.06);
+    border-left: 2px solid var(--cranberry);
+    padding: 14px 18px;
+    font-size: 0.97rem;
+    color: var(--navy);
+    opacity: 0.85;
+    margin-bottom: 36px;
+  }
+
+  .deadline-note strong {
+    color: var(--cranberry);
+    font-weight: 500;
+  }
+
+  /* ── CONTACT SECTION ── */
+  .contact-section {
+    background: var(--navy);
+    padding: 56px 32px;
+    text-align: center;
+  }
+
+  .contact-inner {
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  .contact-section h2 {
+    font-family: var(--body-font);
+    font-weight: 300;
+    font-size: 2rem;
+    color: var(--ivory);
+    margin-bottom: 14px;
+    letter-spacing: 0.01em;
+  }
+
+  .contact-section p {
+    font-family: var(--body-font);
+    font-style: italic;
+    font-size: 1.175rem;
+    color: var(--ivory);
+    opacity: 0.65;
+    margin-bottom: 36px;
+  }
+
+  .contact-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 14px 38px;
+    background: var(--viking-blue);
+    color: white;
+    font-family: var(--ui-font);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s ease, opacity 0.2s ease;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+  }
+
+  .btn-primary:hover { background: #254d69; }
+
+  .btn-outline {
+    display: inline-block;
+    padding: 13px 38px;
+    background: transparent;
+    color: var(--ivory);
+    font-family: var(--ui-font);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid rgba(201, 164, 76, 0.5);
+    transition: border-color 0.2s ease, color 0.2s ease;
+    cursor: pointer;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+  }
+
+  .btn-outline:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  /* ── SIGN-OFF ── */
+  .signoff {
+    max-width: 660px;
+    margin: 0 auto;
+    padding: 60px 32px 40px;
+  }
+
+  .signoff p {
+    font-size: 1.08rem;
+    color: var(--navy);
+    opacity: 0.82;
+    margin-bottom: 1.4em;
+  }
+
+  .signoff-name {
+    font-family: var(--body-font);
+    font-style: italic;
+    font-size: 1.7rem;
+    color: var(--viking-blue);
+    margin-top: 28px;
+    display: block;
+    letter-spacing: 0.01em;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 28px 32px;
+    text-align: center;
+    border-top: 1px solid rgba(201, 164, 76, 0.2);
+  }
+
+  footer p {
+    font-family: var(--ui-font);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--navy);
+    opacity: 0.35;
+  }
+
+  /* ── DIVIDERS ── */
+  .ornament-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 8px 0;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .ornament-divider span.l { flex: 1; height: 1px; background: var(--gold); opacity: 0.3; }
+  .ornament-divider span.d { width: 5px; height: 5px; background: var(--gold); transform: rotate(45deg); opacity: 0.45; }
+
+  @media (max-width: 640px) {
+    .sage-block { padding: 36px 28px; }
+    .hero { padding: 8px 24px 44px; }
+    .letter-body { padding: 0 24px 44px; }
+    .itinerary-section { padding: 44px 24px; }
+    .signoff { padding: 48px 24px 36px; }
+    h1 { font-size: 1.9rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- LETTERHEAD -->
+<header class="letterhead">
+  <div class="letterhead-rule">
+    <span class="line"></span>
+    <span class="diamond"></span>
+    <span class="line"></span>
+  </div>
+  <p class="from-line">A personal note from Elena</p>
+  <p class="date-line">June 2026</p>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-eyebrow">Christmas in Europe &nbsp;·&nbsp; Viking Cruises</p>
+  <h1>A Christmas-in-Europe Viking Cruise<br><em>I'm Excited to Share</em></h1>
+  <div class="hero-rule"></div>
+  <p class="hero-opening">I'm beginning to share my love of travel in a more intentional way, starting with Viking Cruises.</p>
+</section>
+
+<!-- LETTER BODY -->
+<section class="letter-body">
+  <p>If you've ever imagined spending December along the Mediterranean coast, this itinerary is exactly that.</p>
+  <p>The itinerary is <strong>Viking's Iconic Western Mediterranean</strong> — an 8-day sailing between Barcelona and Rome, with stops in Sète, Marseille, Monte Carlo, and Florence. Available departures September through December 2026. The December sailing adds something especially meaningful: Europe in the Christmas season, with its lights, churches, festive streets, and old-world holiday traditions.</p>
+  <p>I'm sharing this because I think it's genuinely special, and because the current promotion — airfare included — makes this one of the better moments to book. The offer closes on Wednesday, June 24th.</p>
+  <p style="margin-top: 2em;">
+    <a href="elena-viking-email-announcement.html" target="_blank" style="display:inline-block; padding:13px 34px; background:var(--viking-blue); color:#fff; font-family:var(--ui-font); font-size:12px; font-weight:400; letter-spacing:0.2em; text-transform:uppercase; text-decoration:none;">Read My Email Announcement</a>
+  </p>
+</section>
+
+<div class="ornament-divider"><span class="l"></span><span class="d"></span><span class="l"></span></div>
+
+
+
+<!-- ITINERARY SECTION -->
+<section class="itinerary-section">
+  <p class="section-eyebrow">Featured Itinerary</p>
+  <h2>Viking Iconic Western Mediterranean</h2>
+  <p class="route-sub">Barcelona to Rome &nbsp;·&nbsp; Available departures September through December 2026</p>
+
+  <ul class="ports-list">
+    <li>Barcelona</li>
+    <li>Sète</li>
+    <li>Marseille</li>
+    <li>Monte Carlo</li>
+    <li>Florence / Livorno</li>
+    <li>Rome / Civitavecchia</li>
+  </ul>
+
+  <div class="details-grid">
+    <div class="detail-card">
+      <p class="detail-label">Pricing</p>
+      <p class="detail-value">Approx. $3,500 – $5,500 per person, depending on cabin and availability</p>
+    </div>
+    <div class="detail-card">
+      <p class="detail-label">Current Promotion</p>
+      <p class="detail-value">Airfare included with Viking's current offer</p>
+    </div>
+    <div class="detail-card">
+      <p class="detail-label">Sailing Dates</p>
+      <p class="detail-value">Available departures September through December 2026</p>
+    </div>
+    <div class="detail-card">
+      <p class="detail-label">Line</p>
+      <p class="detail-value">Viking Ocean Cruises</p>
+    </div>
+  </div>
+
+  <div class="deadline-note">
+    <strong>Offer closes Wednesday, June 24th.</strong>
+  </div>
+</section>
+
+<div class="ornament-divider"><span class="l"></span><span class="d"></span><span class="l"></span></div>
+
+<!-- CONTACT -->
+<section class="contact-section">
+  <div class="contact-inner">
+    <h2>Interested? Let's talk.</h2>
+    <p>Email me or text me and I'll send you everything you need to decide.</p>
+    <div class="contact-buttons">
+      <a href="https://mail.google.com/mail/?view=cm&to=elenarovetto1@gmail.com&su=Viking%20Cruise%20Inquiry" target="_blank" rel="noopener" class="btn-primary">Email Me for Details</a>
+      <a href="sms:+12013941663" class="btn-outline">Text Me</a>
+    </div>
+  </div>
+</section>
+
+<!-- SIGN-OFF -->
+<section class="signoff">
+  <p>Travel has given me some of the most meaningful experiences of my life.</p>
+  <p>I hope this finds you well, and I hope you'll reach out if you'd like to talk it through.</p>
+  <span class="signoff-name">— Elena</span>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>This is a personal announcement from Elena. All pricing and promotions subject to availability.</p>
+</footer>
+
+</body>
+</html>

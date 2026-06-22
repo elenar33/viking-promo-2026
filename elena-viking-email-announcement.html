@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Note from Elena — Christmas in Europe with Viking</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ivory: #F7F1E8;
+    --navy: #1F2D3D;
+    --viking-blue: #2F5D7C;
+    --gold: #C9A44C;
+    --sage: #9BAE9A;
+    --sage-bg: #EFF3EE;
+    --cranberry: #8A2F2F;
+    --body-font: 'Cormorant Garamond', Georgia, serif;
+    --ui-font: 'Jost', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--ivory);
+    color: var(--navy);
+    font-family: var(--body-font);
+    font-size: 19px;
+    line-height: 1.75;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── LETTERHEAD ── */
+  .letterhead {
+    text-align: center;
+    padding: 52px 24px 24px;
+  }
+
+  .letterhead-rule {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+
+  .letterhead-rule span.line {
+    flex: 1;
+    max-width: 120px;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.6;
+  }
+
+  .letterhead-rule span.diamond {
+    width: 7px;
+    height: 7px;
+    background: var(--gold);
+    transform: rotate(45deg);
+    opacity: 0.8;
+  }
+
+  .from-line {
+    font-family: var(--ui-font);
+    font-weight: 300;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--viking-blue);
+    opacity: 0.75;
+    margin-bottom: 6px;
+  }
+
+  .date-line {
+    font-family: var(--body-font);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--navy);
+    opacity: 0.5;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 12px 32px 48px;
+    text-align: center;
+  }
+
+  .hero-eyebrow {
+    font-family: var(--ui-font);
+    font-size: 10.5px;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--cranberry);
+    margin-bottom: 22px;
+    opacity: 0.85;
+  }
+
+  h1 {
+    font-family: var(--body-font);
+    font-weight: 300;
+    font-size: clamp(2rem, 5vw, 3.1rem);
+    line-height: 1.25;
+    color: var(--navy);
+    margin-bottom: 30px;
+    letter-spacing: -0.01em;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--viking-blue);
+  }
+
+  .hero-rule {
+    width: 48px;
+    height: 1px;
+    background: var(--gold);
+    margin: 0 auto 30px;
+  }
+
+  /* ── LETTER BODY ── */
+  .letter-body {
+    max-width: 660px;
+    margin: 0 auto;
+    padding: 0 32px 56px;
+  }
+
+  .letter-body p {
+    margin-bottom: 1.5em;
+    font-size: 1.1rem;
+    color: var(--navy);
+  }
+
+  .letter-body p:last-child { margin-bottom: 0; }
+
+  .letter-body strong {
+    font-weight: 600;
+    color: var(--viking-blue);
+  }
+
+  /* ── HIGHLIGHT BLOCK ── */
+  .highlight-block {
+    background: var(--sage-bg);
+    border-left: 3px solid var(--sage);
+    padding: 32px 40px;
+    margin: 0 0 40px 0;
+    max-width: 660px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .highlight-block p {
+    font-size: 1.06rem;
+    color: var(--navy);
+    opacity: 0.88;
+    margin-bottom: 1.2em;
+    font-style: italic;
+  }
+
+  .highlight-block p:last-child { margin-bottom: 0; }
+
+  /* ── DEADLINE NOTE ── */
+  .deadline-note {
+    max-width: 660px;
+    margin: 0 auto 40px;
+    padding: 0 32px;
+  }
+
+  .deadline-inner {
+    background: rgba(138, 47, 47, 0.06);
+    border-left: 2px solid var(--cranberry);
+    padding: 14px 18px;
+    font-size: 0.97rem;
+    color: var(--navy);
+    opacity: 0.85;
+  }
+
+  .deadline-inner strong {
+    color: var(--cranberry);
+    font-weight: 500;
+  }
+
+  /* ── SIGN-OFF ── */
+  .signoff {
+    max-width: 660px;
+    margin: 0 auto;
+    padding: 16px 32px 60px;
+  }
+
+  .signoff p {
+    font-size: 1.08rem;
+    color: var(--navy);
+    opacity: 0.82;
+    margin-bottom: 1.4em;
+  }
+
+  .signoff-name {
+    font-family: var(--body-font);
+    font-style: italic;
+    font-size: 1.7rem;
+    color: var(--viking-blue);
+    margin-top: 28px;
+    display: block;
+    letter-spacing: 0.01em;
+  }
+
+  /* ── ORNAMENT DIVIDER ── */
+  .ornament-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 8px 0;
+    max-width: 300px;
+    margin: 0 auto 40px;
+  }
+
+  .ornament-divider span.l { flex: 1; height: 1px; background: var(--gold); opacity: 0.3; }
+  .ornament-divider span.d { width: 5px; height: 5px; background: var(--gold); transform: rotate(45deg); opacity: 0.45; }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 28px 32px;
+    text-align: center;
+    border-top: 1px solid rgba(201, 164, 76, 0.2);
+  }
+
+  footer p {
+    font-family: var(--ui-font);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--navy);
+    opacity: 0.35;
+  }
+
+  @media (max-width: 640px) {
+    .hero { padding: 8px 24px 36px; }
+    .letter-body { padding: 0 24px 44px; }
+    .highlight-block { padding: 28px 24px; margin-left: 24px; margin-right: 24px; }
+    .deadline-note { padding: 0 24px; }
+    .signoff { padding: 16px 24px 48px; }
+    h1 { font-size: 1.9rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- LETTERHEAD -->
+<header class="letterhead">
+  <div class="letterhead-rule">
+    <span class="line"></span>
+    <span class="diamond"></span>
+    <span class="line"></span>
+  </div>
+  <p class="from-line">A personal note from Elena</p>
+  <p class="date-line">June 2026</p>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-eyebrow">Christmas in Europe &nbsp;·&nbsp; Viking Cruises</p>
+  <h1>Something Personal<br><em>I'm Excited to Share</em></h1>
+  <div class="hero-rule"></div>
+</section>
+
+<!-- LETTER BODY -->
+<section class="letter-body">
+  <p>Hi everyone,</p>
+  <p>I wanted to share something personal and exciting with you. I am pursuing my passion for travel by becoming a Viking Cruise Line Travel Advisor, and I am starting with something I truly believe is special: a Christmas-season Viking cruise through the Western Mediterranean.</p>
+  <p>I have been researching Viking's beautiful <strong>Iconic Western Mediterranean</strong> itinerary — an 8-day cruise sailing between Barcelona and Rome with stops that include Sète, Marseille, Monte Carlo, Florence, and Rome. This itinerary is available on select sailings from September through February, but the December departure adds something especially meaningful: the chance to experience Europe during the Christmas season, with its lights, churches, festive streets, and old-world holiday atmosphere. With guided tours, onboard dining, and Viking's current airfare-included promotion, this sailing also offers a more approachable way to experience Viking's elegant style of travel.</p>
+  <p>The reason this one caught my attention is the timing. If you have ever wanted to experience the Christmas spirit in Europe — the lights, churches, holiday markets, historic cities, and that magical old-world atmosphere and traditions — this could be a wonderful fit.</p>
+</section>
+
+<!-- HIGHLIGHT BLOCK -->
+<div class="highlight-block">
+  <p>The current pricing appears to range from approximately <strong>$3,500 per person</strong> on the lower end to about <strong>$5,500 per person</strong> on the higher end, depending on cabin category and availability. Pricing and availability are subject to change.</p>
+  <p>The airfare-included offer carries a deadline of <strong>Wednesday, June 24th</strong> — so this is a time-sensitive opportunity.</p>
+</div>
+
+<!-- DEADLINE NOTE -->
+<div class="deadline-note">
+  <div class="deadline-inner">
+    <strong>Offer closes Wednesday, June 24th.</strong> There is absolutely no pressure — I am simply sharing this with friends and family first.
+  </div>
+</div>
+
+<div class="ornament-divider"><span class="l"></span><span class="d"></span><span class="l"></span></div>
+
+<!-- SIGN-OFF -->
+<section class="signoff">
+  <p>If this interests you, reply to this email or text me and I will be happy to send you the details, pricing, itinerary notes, and help you see whether it makes sense for you. Feel free to pass this on to anyone you know who might enjoy this itinerary.</p>
+  <p>I am excited to begin this new chapter by helping people explore meaningful, beautiful travel experiences — and this Viking Christmas cruise feels like a very special place to start.</p>
+  <p>Happy Travels,</p>
+  <span class="signoff-name">— Elena</span>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>This is a personal announcement from Elena. All pricing and promotions subject to availability.</p>
+</footer>
+
+</body>
+</html>
